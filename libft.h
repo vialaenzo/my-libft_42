@@ -1,20 +1,20 @@
-﻿/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 22:18:16 by eviala            #+#    #+#             */
-/*   Updated: 2024/04/23 22:18:16 by eviala           ###   ########.fr       */
+/*   Created: 2024/04/25 17:22:36 by eviala            #+#    #+#             */
+/*   Updated: 2024/04/25 17:22:36 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIB_H
-# define FT_LIB_H
+#ifndef LIBFT_H
+# define LIBFT_H
 # include <unistd.h>
-# include <stdlib.h>
+# include <stdio.h>
 
-
-
+void	ft_putchar(char c);
+int		ft_strlen(const char *str);
 #endif

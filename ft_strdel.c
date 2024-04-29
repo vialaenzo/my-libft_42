@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 17:22:36 by eviala            #+#    #+#             */
-/*   Updated: 2024/04/29 19:44:28 by eviala           ###   ########.fr       */
+/*   Created: 2024/04/29 19:27:17 by eviala            #+#    #+#             */
+/*   Updated: 2024/04/29 19:40:40 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <unistd.h>
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h> 
+#include "libft.h"
 
-void	ft_putchar(char c);
-int		ft_strlen(const char *str);
-int		ft_isascii(int i);
-int		ft_isalnum(int i);
-int		ft_isdigit(int i);
-int		ft_isalpha(int i);
-int		ft_isprint(int i);
+void	ft_strdel(char **as)
+{
+	int	i;
+	int	len;
 
-#endif
+	i = 0;
+	len = ft_strlen(*as);
+	while (i < len)
+	{
+		free(as[i]);
+		i++;
+	}
+	**as = NULL;
+}

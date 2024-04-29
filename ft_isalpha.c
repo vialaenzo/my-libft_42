@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 17:22:36 by eviala            #+#    #+#             */
-/*   Updated: 2024/04/29 19:44:28 by eviala           ###   ########.fr       */
+/*   Created: 2024/04/29 19:22:51 by eviala            #+#    #+#             */
+/*   Updated: 2024/04/29 19:46:01 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <unistd.h>
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h> 
-
-void	ft_putchar(char c);
-int		ft_strlen(const char *str);
-int		ft_isascii(int i);
-int		ft_isalnum(int i);
-int		ft_isdigit(int i);
-int		ft_isalpha(int i);
-int		ft_isprint(int i);
-
-#endif
+int	ft_isalpha(int i)
+{
+	if ((i >= 'A' && i <= 'Z') || (i >= 'a' && i <= 'z'))
+		return (1);
+	return (0);
+}

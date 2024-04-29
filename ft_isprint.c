@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eviala <enzo.viala@42.fr>                  +#+  +:+       +#+        */
+/*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:25:47 by eviala            #+#    #+#             */
-/*   Updated: 2024/04/29 19:43:11 by eviala           ###   ########.fr       */
-/*                                                                            */
+/*   Created: 2024/04/29 16:58:00 by eviala            #+#    #+#             */
+/*   Updated: 2024/04/29 17:12:02 by eviala           ###   ########.fr       */
+/*                                                                           */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(void)
+int	ft_isprint(int i)
 {
-	printf("%d", ft_strlen("Test"));
-	ft_putchar('t');
+	if (i >= 32 && i <= 126)
+		return (1);
 	return (0);
 }

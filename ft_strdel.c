@@ -6,7 +6,7 @@
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:27:17 by eviala            #+#    #+#             */
-/*   Updated: 2024/04/29 19:40:40 by eviala           ###   ########.fr       */
+/*   Updated: 2024/05/01 11:02:42 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_strdel(char **as)
 {
-	int	i;
-	int	len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
 	len = ft_strlen(*as);
@@ -24,5 +24,5 @@ void	ft_strdel(char **as)
 		free(as[i]);
 		i++;
 	}
-	**as = NULL;
+	**as = '\0';
 }

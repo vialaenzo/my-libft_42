@@ -6,9 +6,11 @@
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 11:33:18 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/01 11:37:55 by eviala           ###   ########.fr       */
+/*   Updated: 2024/05/02 10:52:42 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {

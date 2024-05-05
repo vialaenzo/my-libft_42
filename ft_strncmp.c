@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 21:00:19 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/04 12:49:11 by eviala           ###   ########.fr       */
+/*   Created: 2024/05/04 13:01:33 by eviala            #+#    #+#             */
+/*   Updated: 2024/05/04 13:01:41 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putnbr(int nb)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	if (nb == -2147483648)
+	int	i;
+
+	i = 0;
+	while (s1[i] && s1[i] == s2[i] && n > 0)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		i++;
+		n--;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
+	if (n == 0)
+		return (0);
+	return (s1[i] - s2[i]);
 }

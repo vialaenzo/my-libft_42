@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 21:00:19 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/04 12:49:11 by eviala           ###   ########.fr       */
+/*   Created: 2024/05/02 11:07:26 by eviala            #+#    #+#             */
+/*   Updated: 2024/05/05 15:31:23 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+char	*strncpy(char *dest, const char *src, size_t n)
 {
-	if (nb == -2147483648)
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\n' && i < n)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		dest[i] = src[i];
+		i++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
+	while (i < n)
+		dest[i] = '\0';
+	return (dest);
 }

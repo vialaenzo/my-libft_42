@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 21:00:19 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/04 12:49:11 by eviala           ###   ########.fr       */
+/*   Created: 2024/05/05 15:14:11 by eviala            #+#    #+#             */
+/*   Updated: 2024/05/05 15:33:43 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" 
 
-void	ft_putnbr(int nb)
+void	ft_bzero(void *s, size_t n)
 {
-	if (nb == -2147483648)
+	char	*ptr;
+	size_t	i;
+
+	ptr = (char *)s;
+	i = 0;
+	while (i < n)
 	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
+		ptr[i++] = 0;
 	}
 }

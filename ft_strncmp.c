@@ -6,11 +6,11 @@
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:01:33 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/04 13:01:41 by eviala           ###   ########.fr       */
+/*   Updated: 2024/05/06 16:39:25 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
 	int	i;
 

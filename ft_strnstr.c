@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/04 12:36:30 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/06 16:18:24 by eviala           ###   ########.fr       */
+/*   Created: 2024/05/07 14:54:37 by eviala            #+#    #+#             */
+/*   Updated: 2024/05/07 15:56:30 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		i;
-	char	*cpy;
+	unsigned long	i;
+	int				j;
 
+	j = 0;
 	i = 0;
-	cpy = (char *)malloc(ft_strlen(src) * sizeof(char));
-	if (!cpy)
-		return (NULL);
-	while (src[i] != '\n')
+	if (!*little)
+		return ((char *)big);
+	while (big[i])
 	{
-		cpy[i] = src[i];
-		i++;
+		j = 0;
+		while (big[i] == little[j] && big[i] && i < len)
+		{
+			i++;
+			j++;
+		}
+		if (!little[j])
+			return ((char *)&big[i - j]);
+		i = (i - j) + 1;
 	}
-	cpy[i] = '\0';
-	return (cpy);
+	return (NULL);
 }

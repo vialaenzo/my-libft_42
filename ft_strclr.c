@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/04 12:36:30 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/06 16:18:24 by eviala           ###   ########.fr       */
+/*   Created: 2024/05/06 16:29:31 by eviala            #+#    #+#             */
+/*   Updated: 2024/05/06 16:30:40 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(char *src)
+void	ft_strclr(char *s)
 {
-	int		i;
-	char	*cpy;
+	int	i;
 
 	i = 0;
-	cpy = (char *)malloc(ft_strlen(src) * sizeof(char));
-	if (!cpy)
-		return (NULL);
-	while (src[i] != '\n')
-	{
-		cpy[i] = src[i];
-		i++;
-	}
-	cpy[i] = '\0';
-	return (cpy);
+	while (s[i] != '\0')
+		s[i++] = '\0';
 }

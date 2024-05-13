@@ -6,8 +6,13 @@
 /*   By: eviala <enzo.viala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:47:54 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/13 17:48:09 by eviala           ###   ########.fr       */
+/*   Updated: 2024/05/13 17:51:13 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*itoa(int value, char *string, int radix)
+{
+
+}

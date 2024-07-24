@@ -22,11 +22,14 @@ SRCS		= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_atoi.c ft_strchr.c ft_strrchr.c ft_strnstr.c ft_memcmp.c ft_memchr.c ft_memset.c \
 	ft_bzero.c ft_memcpy.c ft_memmove.c ft_strdup.c ft_calloc.c ft_strjoin.c ft_split.c \
 	ft_itoa.c ft_substr.c ft_strtrim.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putchar_extra.c ft_putstr_extra.c\
-	ft_putnbr_extra.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putchar.c ft_putstr.c\
+	ft_putnbr.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 	ft_lstmap.c ft_strjoin_free.c ft_isplusminus.c ft_strlon.c \
-	get_next_line.c get_next_line_utils.c 
+	get_next_line.c get_next_line_utils.c ft_strcpy.c ft_count_occ.c \
+	ft_putchar_fd_printf.c ft_printf.c ft_puthex_fd_printf.c ft_putnbr_fd_printf.c \
+	ft_putptr_fd_printf.c ft_putstr_fd_printf.c ft_putunbr_fd_printf.c
+
 
 # Conversion des fichiers source en fichiers objets
 OBJS = $(addprefix $(OBJ_DIR), $(notdir $(SRCS:.c=.o)))
@@ -44,7 +47,7 @@ $(NAME): $(OBJS)
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.c | $(OBJ_DIR)
 	@$(eval CURRENT_INDEX=$(shell echo $$(($(CURRENT_INDEX)+1))))
 	@$(eval PERCENT=$(shell echo $$(($(CURRENT_INDEX) * 100 / $(TOTAL_FILES)))))
-	@printf "\r$(YELLOW)🔧 $(GREEN)%3d%% $(YELLOW)$(BOLD)Compiling:$(RED)$(BOLD) ${NAME}${RESET} $(RESET)$(BLUE)$(ITALIC)%-50s $(MAGENTA)[%3d/%3d]$(RESET)" $(PERCENT) "$<" $(CURRENT_INDEX) $(TOTAL_FILES)
+	@printf "\r🔧 $(BLUE)$(BOLD)%3d%% $(WHITE)$(BOLD)Compiling:$(WHITE)$(BOLD) ${NAME}${RESET} $(RED)$(BOLD)%-50s $(MAGENTA)[%3d/%3d]$(RESET)" $(PERCENT) "$<" $(CURRENT_INDEX) $(TOTAL_FILES)
 	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
 
 $(OBJ_DIR):

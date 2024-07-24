@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_count_occ.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 11:17:58 by eviala            #+#    #+#             */
-/*   Updated: 2024/07/24 11:17:24 by eviala           ###   ########.fr       */
+/*   Created: 2024/07/20 10:30:20 by eviala            #+#    #+#             */
+/*   Updated: 2024/07/20 10:30:25 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_count_occ(char *str, char c)
 {
-	write(fd, &c, 1);
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			count++;
+		i++;
+	}
+	return (count);
 }

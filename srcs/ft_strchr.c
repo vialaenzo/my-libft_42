@@ -6,7 +6,7 @@
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:26:56 by eviala            #+#    #+#             */
-/*   Updated: 2024/05/21 14:03:38 by eviala           ###   ########.fr       */
+/*   Updated: 2024/07/22 11:57:00 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,26 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == cc)
 		return ((char *) &s[i]);
 	return (NULL);
+}
+
+int	ft_strchr_char(char *str, char *cmp)
+{
+	int		i;
+	int		y;
+
+	i = 0;
+	y = 0;
+	if (cmp[y] == '\0' && str[i] == '\0')
+		return (1);
+	while (str[i])
+	{
+		while (str[i + y] == cmp[y] && str[i + y] && cmp[y])
+			y++;
+		if (cmp[y] == '\0' && str[i + y] == '\0')
+			return (1);
+		else
+			y = 0;
+		i++;
+	}
+	return (0);
 }

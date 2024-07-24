@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_extra.c                                  :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 12:31:10 by eviala            #+#    #+#             */
-/*   Updated: 2024/06/19 14:35:30 by eviala           ###   ########.fr       */
+/*   Created: 2024/07/06 11:35:15 by eviala            #+#    #+#             */
+/*   Updated: 2024/07/06 11:35:21 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_extra(const char *str)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 11:17:58 by eviala            #+#    #+#             */
-/*   Updated: 2024/07/24 11:17:24 by eviala           ###   ########.fr       */
+/*   Created: 2024/05/20 12:31:10 by eviala            #+#    #+#             */
+/*   Updated: 2024/07/24 11:26:29 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putstr(const char *str)
 {
-	write(fd, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		write(1, &str[i++], 1);
 }

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_extra.c                                  :+:      :+:    :+:   */
+/*   ft_putstr_fd_printf.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 21:00:19 by eviala            #+#    #+#             */
-/*   Updated: 2024/06/24 12:20:07 by eviala           ###   ########.fr       */
+/*   Created: 2024/05/25 12:11:44 by eviala            #+#    #+#             */
+/*   Updated: 2024/07/24 11:31:25 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_extra(int nb)
+int	ft_putstr_fd_printf(char *str, int fd)
 {
-	if (nb == -2147483648)
+	int	count;
+
+	if (!str)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		count = ft_putstr_fd_printf("(null)", fd);
+		return (count);
 	}
-	if (nb < 0)
-	{
-		ft_putchar_extra('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr_extra(nb / 10);
-		ft_putnbr_extra(nb % 10);
-	}
-	else
-	{
-		ft_putchar_extra(nb + '0');
-	}
+	count = 0;
+	while (str[count])
+		count += ft_putchar_fd_printf(str[count], fd);
+	return (count);
 }
